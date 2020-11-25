@@ -39,12 +39,9 @@
           $('#m').val('');
           return false;
         });
-        let selectedText;
-        $('#sel1').change(function () {
-          selectedText = $(this).text();
-        });
+        var x = document.getElementById("sel1").value;
         socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
+          $('#messages').append($('<li>').text(msg),x);
           window.scrollTo(0, document.body.scrollHeight);
         });
       });
